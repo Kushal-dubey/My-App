@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class HomePage extends StatelessWidget {
   //const HomePage({super.key});
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // in the scaffold the center is a task in body widget;
       //function as Scaffold
       body: Center(
         //container in child function
@@ -15,10 +17,16 @@ class HomePage extends StatelessWidget {
           child: Text("Welcome To my $days days channel dear $name "),
         ),
       ),
-      drawer: Drawer(),   //use tomake the side panel of menu
-      appBar: AppBar(   //app bar is used to make the bar
-        title: Text("IRCTC"),
-      
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+      ), //use tomake the side panel of menu
+      appBar: AppBar(
+        //app bar is used to make the bar
+        title: Text(
+          "IRCTC",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.red,
       ),
     );
   }
