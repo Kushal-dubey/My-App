@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/Login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,10 +22,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     bringvegetables(rupees: 50);
     return MaterialApp(
-      themeMode: ThemeMode.dark, //dark theme in thememode
+      themeMode: ThemeMode.light, //dark theme in thememode
       theme: ThemeData(
-          primarySwatch: Colors
-              .deepPurple), //theme is used for data and primary swatch is used for body and widgets
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        //primaryTextTheme: GoogleFonts.latoTextTheme(),  // this is the primary text theme which have lato text theme in it
+      ),
+      //theme is used for data and primary swatch is used for body and widgets
       darkTheme: ThemeData(
         brightness: Brightness
             .dark, //brightness is the important part we can set it as dark or
