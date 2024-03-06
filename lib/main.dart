@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/Login_page.dart';
+import 'package:flutter_application_1/utils/Routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     bringvegetables(rupees: 50);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light, //dark theme in thememode
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
@@ -39,11 +41,12 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) =>
             LoginPage(), //this is the main branch and only that thing will be displayed either homepage or loginpage
-        "/home": (context) =>
-            HomePage(), // route for home page will be displayed afterwards
-        "/login": (context) => LoginPage(), //route for login page
+        MyRoutes.homeRoute: (context) =>
+            HomePage(), // route for home page will be displayed afterwards and it is the static coordination of myroutes to be displayed
+        MyRoutes.loginRoute: (context) =>
+            LoginPage(), //route for login page through the static coordination of login route
       },
-      // home: HomePage(),
+      // home: HomePage(),  //used to simply display the homepage and it is an object simply
     );
   }
 }
